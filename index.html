@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 1</title>
+  </head>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .number {
+      margin: 200px 0 30px;
+      height: 100px;
+      font-size: 5rem;
+      position: relative;
+    }
+    #tombol {
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      background-color: rgb(128, 68, 240);
+      box-shadow: 5px 5px rgb(138, 129, 129);
+      font-size: 2rem;
+      padding: 10px 100px;
+      border-radius: 10px;
+    }
+    #tombol:active {
+      position: relative;
+      box-shadow: none;
+      left: 5px;
+      top: 5px;
+    }
+    @keyframes bounce {
+      0% {
+        bottom: 0;
+      }
+      25% {
+        bottom: 50px;
+      }
+      50% {
+        bottom: 0;
+      }
+      75% {
+        bottom: 50px;
+      }
+      100% {
+        bottom: 0;
+      }
+    }
+  </style>
+  <body>
+    <div class="number">0</div>
+    <button id="tombol">+</button>
+    <script>
+      let angka = 0;
+      document.getElementById("tombol").addEventListener("click", function () {
+        angka += 1;
+        document.querySelector(".number").innerHTML = angka;
+        if (angka % 5 === 0) {
+          document.querySelector(".number").style.animationName = "bounce";
+          document.querySelector(".number").style.animationDuration = "2s";
+        } else {
+          document.querySelector(".number").style.animation = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
